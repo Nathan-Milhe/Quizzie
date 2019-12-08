@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Quizzie</title>
+    <!-- META -->
+    <meta charset="utf-8">
+    <!-- Imports CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body style="background: darkcyan;color:white;">
+    <div class="container">
+      <div class="row" style="margin-top:15vh;padding:15px;">
+        <div class="col-4" style="margin-right:-1px;">
+          <p id="nbQuestions" style="margin-left:10vh;display: inline-block;"></p> questions
+          <hr>
+          <div style="margin-left:10vh">
+            <p id="nameBestPlayer" style="display: inline-block;"> </p> détient le record avec<br>
+            <p id="bestScore" style="display: inline-block;"></p> points
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-6">
+              <button class="btn" style="float:right" onclick="location.href='index.html'">Accueil</button>
+            </div>
+            <div class="col-6">
+              <button class="btn" style="float:left" onclick="location.href='game.html'">Lancer</button>
+            </div>
+          </div>
+        </div>
+        <div style="background:white;width:1px;height:50vh;"></div>
+        <div class="col-8">
+          <h1 style="text-align: center">Editer les questions de votre quiz</h1>
+          <hr>
+          <!-- Afficher l'ensemble des questions -->
+          <div class="row">
+            <div class="col-12">
+              <h4>Liste des questions</h4>
+              <hr>
+              <div class="row">
+                <div class="col-12">
+                  <p>Question : <script type="text/javascript">localStorage.getItem('allQuestions')</script></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="newQuestion">
+            <h4>Ajouter une nouvelle question</h4>
+            <hr>
+            <form onsubmit="questionAdd()" style="border:1px solid white;padding:10px">
+              <div class="row">
+                <div class="col-2" style="display:inline-block;">
+                  Question :
+                </div>
+                <div class="col-10" style="display:inline-block;">
+                  <input type="text" id="inputQuestion" class="inputEdit" placeholder="Saisissez votre Question ...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2" style="display:inline-block;">
+                  Réponse 1 :
+                </div>
+                <div class="col-10" style="display:inline-block;">
+                  <input type="text" id="inputReponseA" class="inputEdit" placeholder="Saisissez votre réponse A ...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2" style="display:inline-block;">
+                  Réponse 2 :
+                </div>
+                <div class="col-10" style="display:inline-block;">
+                  <input type="text" id="inputReponseB" class="inputEdit" placeholder="Saisissez votre réponse B ...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2" style="display:inline-block;">
+                  Réponse 3 :
+                </div>
+                <div class="col-10" style="display:inline-block;">
+                  <input type="text" id="inputReponseC" class="inputEdit" placeholder="Saisissez votre réponse C ...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2" style="display:inline-block;">
+                  Réponse 4 :
+                </div>
+                <div class="col-10" style="display:inline-block;">
+                  <input type="text" id="inputReponseD" class="inputEdit" placeholder="Saisissez votre réponse D ...">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6" style="display:inline-block;">
+                  Sélectionner la bonne réponse :
+                </div>
+                <div class="col-6" style="display:inline-block;">
+                  <select id="correctAnswer">
+                    <option value="a">Réponse A</option>
+                    <option value="b">Réponse B</option>
+                    <option value="c">Réponse C</option>
+                    <option value="d">Réponse D</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="btn">Valider</button>
+            </form>
+          </div>
+          <ul id="myUL"></ul>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="getName.js"></script>
+  </body>
+</html>
